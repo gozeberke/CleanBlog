@@ -8,7 +8,7 @@
   
 
   <!-- Page Header -->
-  <header class="masthead" style="background-image: url('/img/post-sample-image.jpg')">
+  <header class="masthead" style="background-image: url('/img/post-bg.jpg')">
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
@@ -31,10 +31,14 @@
         <div class="col-12 mx-auto">
           <h2 class="section-heading"><%= blog.title %></h2>
           <p><%=blog.detail %></p>
-          <a href="#">
-            <img class="img-fluid" src="img/post-sample-image.jpg" alt="">
-          </a>
-          <span class="caption text-muted">To go places and do things that have never been done before – that’s what living is all about.</span>
+         
+          <div class="clearfix">
+
+            <a class="btn btn-danger float-right" href="/blogs/<%= blog._id %>?_method=DELETE"
+              onclick="return confirm('ARE YOU SURE?')">Delete Post</a>
+            <a class="btn btn-warning float-right text-white mr-3" href="/blogs/edit/<%= blog._id %>">Update Post</a>
+            
+          </div>
       </div>
     </div>
   </article>
